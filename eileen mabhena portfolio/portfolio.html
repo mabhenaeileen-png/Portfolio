@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eileen Mabhena | Computer Science &amp; Health Tech</title>
+  <meta name="description" content="Eileen Mabhena is a BSc Computer Science and Informatics student at the University of Johannesburg, interested in backend development and technology for healthcare." />
+  <meta property="og:title" content="Eileen Mabhena | Computer Science &amp; Health Tech" />
+  <meta property="og:description" content="Computer Science student building software for healthcare." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --paper: #f3f7f8; --ink: #0f2747; --muted: #566b7e; --line: #d3dfe3;
+      --accent: #0a8a7a; --accent-lt: #3fe0c0; --cream: #f3f7f8;
+      --serif: 'Fraunces', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.7; display: grid; grid-template-columns: 360px 1fr; }
+
+    /* SIDEBAR: stays put while the right side scrolls */
+    aside { position: sticky; top: 0; height: 100vh; color: var(--cream);
+      /* Sidebar picture: save an image as sidebar.jpg next to index.html. The dark overlay keeps the text readable;
+         if the file is missing you just get the plain blue. */
+      background: linear-gradient(180deg, rgba(15,39,71,.72) 0%, rgba(15,39,71,.88) 60%, rgba(15,39,71,.95) 100%), url('sidebar.jpg') center / cover no-repeat, var(--ink); padding: 2.5rem 2.25rem; display: flex; flex-direction: column; }
+    .photo-wrap { position: relative; width: 96px; height: 96px; margin-bottom: 1.5rem; }
+    .initials { position: absolute; inset: 0; border-radius: 50%; background: #1b3d66; border: 2px solid var(--accent); display: grid; place-items: center; font-family: var(--serif); font-size: 1.8rem; color: var(--cream); }
+    .photo { position: absolute; inset: 0; width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); background: #1b3d66; }
+    aside h1 { font-family: var(--serif); font-size: 2.4rem; line-height: 1.05; letter-spacing: -.02em; }
+    aside h1 em { color: var(--accent); font-style: italic; font-weight: 600; }
+    .role { margin-top: .9rem; font-size: 14px; color: #9fb4c9; max-width: 260px; }
+    .ecg { width: 100%; height: 48px; margin: 1.5rem 0; }
+    .ecg path { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 2.6s ease-out forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    aside nav ul { list-style: none; }
+    aside nav a { display: flex; gap: .9rem; padding: .35rem 0; color: #9fb4c9; text-decoration: none; font-size: 15px; transition: color .2s, transform .2s; }
+    aside nav a span { font-size: 12px; color: var(--accent); padding-top: .25rem; }
+    aside nav a:hover { color: var(--cream); transform: translateX(4px); }
+    .side-contact { margin-top: auto; font-size: 14px; display: flex; flex-direction: column; gap: .3rem; }
+    .side-contact a { color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(243,247,248,.25); width: fit-content; }
+    .side-contact a:hover { color: var(--accent); border-color: var(--accent); }
+
+    aside { --accent: var(--accent-lt); }
+
+    /* MAIN */
+    main { padding: 0 5vw 3rem 6vw; max-width: 880px; }
+    section { padding: 5.5rem 0 2rem; }
+    .label { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: .75rem; }
+    .label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+    .lede { font-family: var(--serif); font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.35; font-weight: 400; margin-bottom: 1.5rem; }
+    .lede em { color: var(--accent); }
+    .prose p { color: var(--muted); margin-bottom: 1rem; max-width: 600px; }
+    .facts { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+    .fact b { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+    .fact span { font-size: 15px; }
+
+    /* FOCUS: big numbered rows */
+    .row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .row3 div { border-top: 2px solid var(--ink); padding-top: 1rem; }
+    .row3 i { font-family: var(--serif); font-size: 2.2rem; color: var(--accent); font-style: normal; line-height: 1; }
+    .row3 h3 { font-family: var(--serif); font-size: 1.1rem; margin: .5rem 0 .3rem; }
+    .row3 p { font-size: 14px; color: var(--muted); }
+
+    /* SKILLS: plain definition list, no cards or tags */
+    dl { display: grid; grid-template-columns: 140px 1fr; row-gap: .9rem; }
+    dt { font-weight: 600; font-size: 14px; }
+    dd { color: var(--muted); }
+
+
+    /* SKILLS: grouped cards with tags */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+    .skill-group { padding: 1.25rem; background: #fff; border: 1px solid var(--line); border-radius: 12px; transition: border-color .2s, transform .2s; }
+    .skill-group:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .skill-group h3 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: .75rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tag { font-size: 13px; padding: .2rem .7rem; background: rgba(10,138,122,.09); border: 1px solid rgba(10,138,122,.25); color: var(--ink); border-radius: 999px; }
+
+    /* PROJECTS: ruled list rows */
+    .proj { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; padding: 1.5rem .75rem; border-top: 1px solid var(--line); text-decoration: none; color: inherit; transition: background .2s, padding-left .2s; }
+    .proj:last-child { border-bottom: 1px solid var(--line); }
+    .proj:hover { background: rgba(10,138,122,.08); padding-left: 1.25rem; }
+    .proj .n { font-family: var(--serif); font-size: 1.4rem; color: var(--accent); }
+    .proj h3 { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; }
+    .proj .kind { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    .proj p { font-size: 14px; color: var(--muted); margin: .3rem 0 .4rem; max-width: 520px; }
+    .proj .stack { font-size: 13px; color: var(--ink); opacity: .7; }
+    .proj .go { font-size: 1.4rem; align-self: center; transition: transform .2s; }
+    .proj:hover .go { transform: translateX(4px) rotate(-45deg); color: var(--accent); }
+
+    .cert { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 0; border-top: 1px solid var(--line); }
+    .cert small { color: var(--muted); display: block; font-size: 13px; }
+    .cert em { font-style: normal; font-size: 12px; color: var(--accent); font-weight: 600; }
+
+    .big-link { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2.2rem); color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--accent); }
+    .big-link:hover { color: var(--accent); }
+
+    .contact-links { display: flex; flex-direction: column; gap: .75rem; margin-top: 2rem; max-width: 460px; }
+    .contact-link { display: flex; align-items: center; gap: .75rem; padding: .9rem 1.25rem; background: #fff; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: var(--ink); transition: all .2s; }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
+    .contact-link .val { margin-left: auto; font-size: 13px; color: var(--muted); }
+    footer { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+
+    .fade-in { opacity: 0; transform: translateY(16px); transition: opacity .6s, transform .6s; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .ecg path { animation: none; stroke-dashoffset: 0; } .fade-in { opacity: 1; transform: none; transition: none; } }
+
+    @media (max-width: 860px) {
+      body { display: block; }
+      aside { position: static; height: auto; padding: 2rem 1.5rem; }
+      aside nav { display: none; }
+      .side-contact { margin-top: 1.5rem; }
+      main { padding: 0 1.5rem 2rem; }
+      .row3 { grid-template-columns: 1fr; }
+      dl { grid-template-columns: 1fr; row-gap: .2rem; } dd { margin-bottom: .8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside>
+    <div class="photo-wrap"><div class="initials">EM</div><img class="photo" src="eileen.jpeg" alt="Eileen Mabhena" onerror="this.remove()" /></div>
+    <h1>Eileen<br><em>Mabhena.</em></h1>
+    <p class="role">Computer Science student building software for healthcare.</p>
+    <svg class="ecg" viewBox="0 0 300 48" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 26 H70 L78 26 L84 8 L92 42 L100 3 L108 26 H170 L176 26 L181 17 L187 26 H225 L231 26 L237 10 L244 40 L251 6 L258 26 H300" />
+    </svg>
+    <nav>
+      <ul>
+        <li><a href="#about"><span>01</span>About</a></li>
+        <li><a href="#focus"><span>02</span>Focus</a></li>
+        <li><a href="#skills"><span>03</span>Skills</a></li>
+        <li><a href="#experience"><span>04</span>Experience</a></li>
+        <li><a href="#contact"><span>05</span>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="side-contact">
+      <span style="color:#9fb4c8">Johannesburg, South Africa</span>
+    </div>
+  </aside>
+
+  <main>
+    <section id="about" class="fade-in">
+      <div class="label">01 · About</div>
+      <p class="lede">I want to use technology to build <em>better healthcare systems</em> for Southern Africa.</p>
+      <div class="prose">
+        <p>I'm a Computer Science and Informatics student at the University of Johannesburg. I'm driven, team-minded, and happiest when I'm learning something new or being challenged by a different perspective. My personal interests are backend development, software engineering, and health.</p>
+        <p>Watching a family member go without the help they needed because the technology wasn't there is what pointed me toward this field. I believe the link between technology and health is underestimated, and that computer scientists carry a real responsibility to their countries.</p>
+        <p>As a woman in STEM, I also want to show younger girls that this path is open to them too. Outside of class, I play for the UJ Stars basketball team and tutor my peers.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>Degree</b><span>BSc Computer Science &amp; Informatics (in progress)</span></div>
+        <div class="fact"><b>University</b><span>University of Johannesburg</span></div>
+        <div class="fact"><b>Languages</b><span>English · IsiZulu · French (A1)</span></div>
+      </div>
+    </section>
+
+    <section id="focus" class="fade-in">
+      <div class="label">02 · Focus</div>
+      <div class="row3">
+        <div><i>1</i><h3>Health technology</h3><p>Using software to help people get the care they need, when they need it.</p></div>
+        <div><i>2</i><h3>Backend &amp; software engineering</h3><p>Building the reliable systems that sit behind the tools people depend on.</p></div>
+        <div><i>3</i><h3>Mentorship</h3><p>Tutoring peers and encouraging more young women into STEM.</p></div>
+      </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+      <div class="label">03 · Skills</div>
+      <div class="skills-grid">
+        <div class="skill-group"><h3>Coding</h3><div class="skill-tags"><span class="tag">Visual Basic</span><span class="tag">Python</span><span class="tag">C++</span></div></div>
+        <div class="skill-group"><h3>Software</h3><div class="skill-tags"><span class="tag">Microsoft Word</span><span class="tag">PowerPoint</span><span class="tag">Access</span><span class="tag">Excel</span></div></div>
+        <div class="skill-group"><h3>Academic</h3><div class="skill-tags"><span class="tag">Computer Information Systems</span><span class="tag">Tutoring</span><span class="tag">Information Literacy</span></div></div>
+        <div class="skill-group"><h3>People</h3><div class="skill-tags"><span class="tag">Leadership</span><span class="tag">Mentoring</span><span class="tag">Public Speaking</span><span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Time Management</span><span class="tag">Attention to Detail</span></div></div>
+      </div>
+    </section>
+
+    <section id="experience" class="fade-in">
+      <div class="label">04 · Experience &amp; education</div>
+
+      <div class="proj">
+        <div class="n">01</div>
+        <div><div class="kind">2025 – present</div><h3>BSc Computer Science &amp; Informatics</h3><p>University of Johannesburg. Distinctions in half of my first-year modules with a 74% average. Member of the UJ Stars basketball team. I informally tutored peers in Informatics 1A and Pre-Calculus, and I'm aiming to tutor Calculus of One Variable.</p></div>
+      </div>
+      <div class="proj">
+        <div class="n">02</div>
+        <div><div class="kind">2022 – 2023</div><h3>School Librarian</h3><p>Girls' College Bulawayo. Helped students find information, taught information literacy (database searches, citations, digital resources), and organised and selected collections.</p></div>
+      </div>
+      <div class="proj">
+        <div class="n">03</div>
+        <div><div class="kind">2018 – 2023</div><h3>Girls' College Bulawayo</h3><p>IGCSE O-Levels (5 As, 1 B, 4 Cs) and A-Levels. First in the grade for Computer Science, IsiZulu and French. National colours and captain in basketball. President of the Young Leaders Club.</p></div>
+      </div>
+
+      <div style="margin-top:2.5rem">
+        <div class="label" style="margin-bottom:.5rem">Certifications</div>
+        <div class="cert"><div>International Computer Driving Licence (ICDL)<small>Girls' College Bulawayo · 2018 – 2019</small></div><em>Completed</em></div>
+        <div class="cert"><div>A1 French<small>Alliance Française Bulawayo · 2019 – 2020</small></div><em>Completed</em></div>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <div class="label">05 · Contact</div>
+      <p class="prose" style="margin-bottom:1.2rem"><span style="color:var(--muted)">Always happy to talk about technology, health, or tutoring.</span></p>
+      <a class="big-link" href="mailto:hgctjmntungwa@gmail.com">hgctjmntungwa@gmail.com</a>
+      <div class="contact-links">
+        <a class="contact-link" href="https://www.linkedin.com/in/eileen-mabhena-6275063b8/" target="_blank" rel="noopener"><span>💼</span><span>LinkedIn</span><span class="val">View profile →</span></a>
+        <a class="contact-link" href="https://github.com/mabhenaeileen-png" target="_blank" rel="noopener"><span>🐙</span><span>GitHub</span><span class="val">View profile →</span></a>
+      </div>
+      <footer>© 2026 Eileen Mabhena · deployed with GitHub Pages</footer>
+    </section>
+  </main>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
